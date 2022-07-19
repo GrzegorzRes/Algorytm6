@@ -55,7 +55,7 @@ void MinPriceForTravel(string startPlace, string endPlace, int change)
     }
 
     Console.WriteLine($"{String.Join("->", travel2.Changes.Select(c => c.NamePlace).ToList())}");
-    Console.WriteLine($"\nCena {travel2.Price}");
+    Console.WriteLine($"Cena {travel2.Price}");
 }
 
 void Move(Place station, Place endStation, Travel travel, int change, int price = 0)
