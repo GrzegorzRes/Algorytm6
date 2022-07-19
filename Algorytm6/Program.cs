@@ -18,12 +18,12 @@ MinPriceForTravel("JFK", "LAX", 1);
 
 void AddPlace(string start, string end, int price)
 {
-    Place startStation = CheckIsPlacInConnection(start);
-    Place endStation = CheckIsPlacInConnection(end);
+    Place startStation = GetPlaceByName(start);
+    Place endStation = GetPlaceByName(end);
     startStation.Connections.Add(endStation, price);
 }
 
-Place CheckIsPlacInConnection(string name)
+Place GetPlaceByName(string name)
 {
     try
     {
@@ -40,8 +40,8 @@ Place CheckIsPlacInConnection(string name)
 void MinPriceForTravel(string startPlace, string endPlace, int change)
 {
     travels = new();
-    Place start = CheckIsPlacInConnection(startPlace);
-    Place end = CheckIsPlacInConnection(endPlace);
+    Place start = GetPlaceByName(startPlace);
+    Place end = GetPlaceByName(endPlace);
 
     Travel travel = new Travel();
     Move(start, end, travel, change);
